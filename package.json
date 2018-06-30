@@ -4,12 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "live-server"
+    "build": "browserify main.js -o bundle.js",
+    "watch": "watchify main.js -o bundle.js",
+    "start": "live-server",
+    "dev": "run-all \"npm run watch\" \"live-server\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "live-server": "^1.2.0"
+    "browserify": "^16.2.2",
+    "live-server": "^1.2.0",
+    "run-all": "^1.0.1",
+    "watchify": "^3.11.0"
   }
 }
