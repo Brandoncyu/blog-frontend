@@ -15,7 +15,7 @@ createPost.addEventListener('click', insertForm)
 },{"./scripts/insertForm":3,"./scripts/loadBlog":4,"./scripts/selectorRender":5}],2:[function(require,module,exports){
 function deleteButtonFunction(){
   let id = document.getElementById('blog-id').textContent
-    axios.delete(`http://localhost:3000/posts/${id}`)
+    axios.delete(`https://damp-fortress-44851.herokuapp.com/posts/${id}`)
       .then(result => {let postArea = document.getElementById('posts')
       postArea.innerHTML = ''
       const selectorRender = require('./selectorRender')
@@ -61,7 +61,7 @@ const deleteButtonFunction = require('./deleteButtonFunction')
 const updateButtonFunction = require('./updateButtonFunction')
 
 function loadBlog(id){
-  axios.get(`http://localhost:3000/posts/${id}`)
+  axios.get(`https://damp-fortress-44851.herokuapp.com/posts/${id}`)
     .then(result =>{
       let blogHolder = document.getElementById('posts')
       blogHolder.innerHTML = `<div class="card">
@@ -99,7 +99,7 @@ const loadBlog = require('./loadBlog')
 function selectorRender(){
     const selector = document.getElementById('selector')
 
-    axios.get('http://localhost:3000/posts')
+    axios.get('https://damp-fortress-44851.herokuapp.com/posts')
       .then(result => {
         let data = result.data.data
 
@@ -132,7 +132,7 @@ function submitBlog(event){
   let title = document.getElementById('title').value
   let content = document.getElementById('content').value
   console.log(content)
-  axios.post(`http://localhost:3000/posts`, {title, content})
+  axios.post(`https://damp-fortress-44851.herokuapp.com/posts`, {title, content})
     .then(result => {
       postArea.innerHTML = ''
       selectorRender()
@@ -150,7 +150,7 @@ function updateBlog(event){
   let title = document.getElementById('new-title').value
   let content = document.getElementById('new-content').value
   let id = document.getElementById('new-id').innerHTML
-  axios.put(`http://localhost:3000/posts/${id}`, {title, content})
+  axios.put(`https://damp-fortress-44851.herokuapp.com/posts/${id}`, {title, content})
     .then(result => {
       const selectorRender = require('./selectorRender')
       const loadBlog = require('./loadBlog')

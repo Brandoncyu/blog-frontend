@@ -3,7 +3,7 @@ const loadBlog = require('./loadBlog')
 function selectorRender(){
     const selector = document.getElementById('selector')
 
-    axios.get('https://damp-fortress-44851.herokuapp.com')
+    axios.get('https://damp-fortress-44851.herokuapp.com/posts')
       .then(result => {
         let data = result.data.data
 
