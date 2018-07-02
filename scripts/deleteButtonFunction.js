@@ -1,6 +1,6 @@
 function deleteButtonFunction(){
   let id = document.getElementById('blog-id').textContent
-    axios.delete(`http://localhost:3000/posts/${id}`)
+    axios.delete(`https://damp-fortress-44851.herokuapp.com/${id}`)
       .then(result => {let postArea = document.getElementById('posts')
       postArea.innerHTML = ''
       const selectorRender = require('./selectorRender')

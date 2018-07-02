@@ -2,7 +2,7 @@ const deleteButtonFunction = require('./deleteButtonFunction')
 const updateButtonFunction = require('./updateButtonFunction')
 
 function loadBlog(id){
-  axios.get(`http://localhost:3000/posts/${id}`)
+  axios.get(`https://damp-fortress-44851.herokuapp.com/${id}`)
     .then(result =>{
       let blogHolder = document.getElementById('posts')
       blogHolder.innerHTML = `<div class="card">
