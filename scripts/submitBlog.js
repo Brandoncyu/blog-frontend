@@ -5,7 +5,6 @@ function submitBlog(event){
   let postArea = document.getElementById('posts')
   let title = document.getElementById('title').value
   let content = document.getElementById('content').value
-  console.log(content)
   axios.post(`https://damp-fortress-44851.herokuapp.com/posts`, {title, content})
     .then(result => {
       postArea.innerHTML = ''
